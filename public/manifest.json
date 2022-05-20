@@ -1,7 +1,7 @@
 {
-	"name": "Hi",
-	"short_name": "Hi",
-	"description": "Set your current status.",
+	"name": "Flash",
+	"short_name": "Flash",
+	"description": "All your tech news in one place.",
 	"icons": [
 		{
 			"src": "icon.png",
