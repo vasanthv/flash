@@ -1,0 +1,130 @@
+:root {
+	--background: #ffffff;
+	--text: #161616;
+	--text-light: #787878;
+	--text-dark-mode: #efefef;
+}
+* {
+	outline: 0;
+}
+html {
+	-webkit-overflow-scrolling: touch;
+}
+body {
+	background: var(--background);
+	color: var(--text);
+	margin: 0;
+	font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell,
+		"Helvetica Neue", sans-serif;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	line-height: 1.5;
+	transition: background 0.5s;
+}
+a,
+a:focus,
+a:active {
+	color: inherit;
+	text-decoration: none;
+}
+a:hover {
+	text-decoration: underline;
+}
+.wrap {
+	width: 100%;
+	max-width: 640px;
+	margin-inline: auto;
+	padding: 0px 1rem;
+	box-sizing: border-box;
+}
+.light {
+	color: var(--text-light);
+}
+.small {
+	font-size: 0.9rem;
+}
+.semibold {
+	font-weight: 600;
+}
+.bold {
+	font-weight: 700;
+}
+.flex {
+	display: flex;
+	align-items: center;
+}
+.space-between {
+	justify-content: space-between;
+}
+.flex-1 {
+	flex: 1;
+}
+.row {
+	padding: 1rem 0px;
+}
+article {
+}
+article a.title {
+	overflow-wrap: break-word;
+	word-wrap: break-word;
+	word-break: break-word;
+	position: relative;
+	font-size: 1.2rem;
+	display: block;
+}
+article a.title:visited {
+	color: var(--text-light);
+}
+
+article .meta span:before {
+	content: "·";
+	margin: auto 0.5rem;
+}
+article .meta span:first-child:before {
+	content: "";
+	margin: auto;
+}
+#app main {
+	display: none;
+}
+#page-title {
+	font-size: 3rem;
+}
+#lightning {
+	display: block;
+	width: 3rem;
+	height: 3rem;
+	padding: 0.5rem;
+	background: none;
+	border: none;
+	border-radius: 50%;
+	cursor: pointer;
+}
+#lightning:hover {
+	background: rgba(100, 100, 100, 0.1);
+}
+#lightning svg {
+	width: 100%;
+	height: 100%;
+}
+#loader {
+	display: block;
+	width: 64px;
+	margin: 2rem auto;
+}
+#loadmore {
+	display: block;
+	margin: 1rem auto;
+	text-align: center;
+	font-size: 0.9rem;
+	font-weight: 600;
+}
+#sources {
+}
+#sources .source {
+	opacity: 1;
+}
+#sources .source.disable {
+	color: var(--text-dark-mode) !important;
+	opacity: 0.5;
+}

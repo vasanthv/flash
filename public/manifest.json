@@ -1,0 +1,28 @@
+{
+	"name": "Hi",
+	"short_name": "Hi",
+	"description": "Set your current status.",
+	"icons": [
+		{
+			"src": "icon.png",
+			"sizes": "512x512",
+			"type": "image/png",
+			"purpose": "any"
+		},
+		{
+			"src": "icon-maskable.png",
+			"sizes": "512x512",
+			"type": "image/png",
+			"purpose": "maskable"
+		},
+		{
+			"src": "favicon.svg",
+			"sizes": "any"
+		}
+	],
+	"theme_color": "#ffffff",
+	"background_color": "#ffffff",
+	"display": "standalone",
+	"start_url": "/",
+	"permissions": ["notifications"]
+}
