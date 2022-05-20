@@ -1,0 +1,15 @@
+{
+  "name": "flash",
+  "version": "1.0.0",
+  "description": "A single page to read news from TC, PH, HN etc",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.1"
+  }
+}
