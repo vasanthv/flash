@@ -7,7 +7,7 @@ const sources = [
 	{ sourceType: "techcrunch", sourceLabel: "TechCrunch", color: "#0A9A03" },
 	{ sourceType: "dev-to", sourceLabel: "Dev Community", color: "#000000", darkModeColor: "#ffffff" },
 	{ sourceType: "the-next-web", sourceLabel: "The Next Web", color: "#F84221" },
-	{ sourceType: "medium-technology", sourceLabel: "Medium", color: "#2A2A2A", darkModeColor: "#ffffff" },
+	{ sourceType: "medium-technology", sourceLabel: "Medium (Technology)", color: "#2A2A2A", darkModeColor: "#ffffff" },
 	{ sourceType: "smashing-magazine", sourceLabel: "Smashing Magazine", color: "#CE392B" },
 	{ sourceType: "engadget", sourceLabel: "Engadget", color: "#2B2D33", darkModeColor: "#ffffff" },
 	{ sourceType: "the-verge", sourceLabel: "The Verge", color: "#E1127A" },
