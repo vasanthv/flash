@@ -60,8 +60,6 @@ a:hover {
 .row {
 	padding: 1rem 0px;
 }
-article {
-}
 article a.title {
 	overflow-wrap: break-word;
 	word-wrap: break-word;
@@ -112,12 +110,10 @@ article .meta span:first-child:before {
 }
 #loadmore {
 	display: block;
-	margin: 1rem auto;
+	margin: 1rem auto 3rem;
 	text-align: center;
 	font-size: 0.9rem;
 	font-weight: 600;
-}
-#sources {
 }
 #sources .source {
 	opacity: 1;
