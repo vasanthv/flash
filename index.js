@@ -134,6 +134,9 @@ const fetchTheVerge = async ({ sourceLabel, sourceType }) =>
 const fetchWired = async ({ sourceLabel, sourceType }) =>
 	await fetchFromRSS("https://www.wired.com/feed", sourceLabel, sourceType);
 
+const fetchMediumTechnology = async ({ sourceLabel, sourceType }) =>
+	await fetchFromRSS("https://medium.com/feed/tag/technology", sourceLabel, sourceType);
+
 const supportedSources = [
 	{ sourceType: "hacker-news", sourceLabel: "Hacker News", fetcher: fetchHackerNews },
 	{ sourceType: "product-hunt", sourceLabel: "Product Hunt", fetcher: fetchProductHunt },
@@ -145,6 +148,7 @@ const supportedSources = [
 	{ sourceType: "engadget", sourceLabel: "Engadget", fetcher: fetchEngadget },
 	{ sourceType: "the-verge", sourceLabel: "The Verge", fetcher: fetchTheVerge },
 	{ sourceType: "wired", sourceLabel: "Wired", fetcher: fetchWired },
+	{ sourceType: "medium-technology", sourceLabel: "Medium", fetcher: fetchMediumTechnology },
 ];
 
 // const fetchTemplate = async ({ sourceLabel, sourceType }) => {

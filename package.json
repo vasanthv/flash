@@ -1,6 +1,6 @@
 {
 	"name": "flash",
-	"version": "1.0.3",
+	"version": "1.0.4",
 	"description": "A single page to read news from TC, PH, HN etc",
 	"main": "index.js",
 	"scripts": {
