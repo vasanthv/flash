@@ -2,11 +2,19 @@
  * Flash Service worker
  */
 
-const currentCacheName = "flash-v-~1.0.1";
+const currentCacheName = "flash-v-~1.0.2";
 
 self.addEventListener("install", function(e) {
 	console.log("Install event triggered. New updates available.");
-	const filesToCache = ["/", "/manifest.json", "/style.css", "/vue.global.prod.js", "/axios.min.js", "/script.js"];
+	const filesToCache = [
+		"/",
+		"/manifest.json",
+		"/style.css",
+		"/vue.global.prod.js",
+		"/axios.min.js",
+		"/script.js",
+		"loader.svg",
+	];
 
 	// Deleting the previous version of cache
 	e.waitUntil(
