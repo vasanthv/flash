@@ -1,7 +1,7 @@
 :root {
 	--background: #ffffff;
 	--text: #161616;
-	--text-light: #787878;
+	--text-light: #888888;
 	--text-dark-mode: #efefef;
 }
 * {
@@ -16,8 +16,6 @@ body {
 	margin: 0;
 	font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell,
 		"Helvetica Neue", sans-serif;
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
 	line-height: 1.5;
 	transition: background 0.5s;
 }

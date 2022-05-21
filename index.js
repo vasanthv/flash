@@ -35,8 +35,8 @@ const fetchFromRSS = async (url, sourceLabel, sourceType) => {
 	try {
 		var rss = await rssParse(url);
 		const items = rss.items.map((item) => {
-			const { title, link, published, author } = item;
-			return { title, url: link, date: new Date(published), author, sourceLabel, sourceType };
+			const { title, link, created, published, author } = item;
+			return { title, url: link, date: new Date(created ?? published), author, sourceLabel, sourceType };
 		});
 		return items;
 	} catch (error) {
@@ -125,6 +125,15 @@ const fetchTheNextWeb = async ({ sourceLabel, sourceType }) =>
 const fetchSmashingMagazine = async ({ sourceLabel, sourceType }) =>
 	await fetchFromRSS("https://www.smashingmagazine.com/feed", sourceLabel, sourceType);
 
+const fetchEngadget = async ({ sourceLabel, sourceType }) =>
+	await fetchFromRSS("https://www.engadget.com/rss.xml", sourceLabel, sourceType);
+
+const fetchTheVerge = async ({ sourceLabel, sourceType }) =>
+	await fetchFromRSS("https://www.theverge.com/rss/index.xml", sourceLabel, sourceType);
+
+const fetchWired = async ({ sourceLabel, sourceType }) =>
+	await fetchFromRSS("https://www.wired.com/feed", sourceLabel, sourceType);
+
 const supportedSources = [
 	{ sourceType: "hacker-news", sourceLabel: "Hacker News", fetcher: fetchHackerNews },
 	{ sourceType: "product-hunt", sourceLabel: "Product Hunt", fetcher: fetchProductHunt },
@@ -133,6 +142,9 @@ const supportedSources = [
 	{ sourceType: "dev-to", sourceLabel: "Dev Community", fetcher: fetchDevTo },
 	{ sourceType: "the-next-web", sourceLabel: "The Next Web", fetcher: fetchTheNextWeb },
 	{ sourceType: "smashing-magazine", sourceLabel: "Smashing Magazine", fetcher: fetchSmashingMagazine },
+	{ sourceType: "engadget", sourceLabel: "Engadget", fetcher: fetchEngadget },
+	{ sourceType: "the-verge", sourceLabel: "The Verge", fetcher: fetchTheVerge },
+	{ sourceType: "wired", sourceLabel: "Wired", fetcher: fetchWired },
 ];
 
 // const fetchTemplate = async ({ sourceLabel, sourceType }) => {

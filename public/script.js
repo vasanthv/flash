@@ -5,9 +5,12 @@ const sources = [
 	{ sourceType: "product-hunt", sourceLabel: "Product Hunt", color: "#DA552E" },
 	{ sourceType: "designer-news", sourceLabel: "Designer News", color: "#2D72D9" },
 	{ sourceType: "techcrunch", sourceLabel: "TechCrunch", color: "#0A9A03" },
-	{ sourceType: "dev-to", sourceLabel: "Dev Community", color: "#000000" },
+	{ sourceType: "dev-to", sourceLabel: "Dev Community", color: "#000000", darkModeColor: "#ffffff" },
 	{ sourceType: "the-next-web", sourceLabel: "The Next Web", color: "#F84221" },
 	{ sourceType: "smashing-magazine", sourceLabel: "Smashing Magazine", color: "#CE392B" },
+	{ sourceType: "engadget", sourceLabel: "Engadget", color: "#2B2D33", darkModeColor: "#ffffff" },
+	{ sourceType: "the-verge", sourceLabel: "The Verge", color: "#E1127A" },
+	{ sourceType: "wired", sourceLabel: "Wired", color: "#000000", darkModeColor: "#ffffff" },
 ];
 const selectedSources = (window.localStorage.selectedSources ?? "hacker-news,product-hunt,techcrunch").split(",");
 
@@ -68,24 +71,18 @@ const App = Vue.createApp({
 			window.localStorage.selectedSources = selectedSourceTypes.join(",");
 		},
 		formatDate: function(dateString) {
-			const date = new Date(dateString);
-			const seconds = Math.floor((new Date() - date) / 1000);
-
-			if (seconds < 86400) {
-				return (
-					`${date.getHours() > 12 ? date.getHours() - 12 : date.getHours()}:` +
-					(date.getMinutes() < 10 ? "0" + date.getMinutes() : date.getMinutes()) +
-					` ${date.getHours() >= 12 ? "pm" : "am"}`
-				);
-			} else if (seconds < 604800) {
-				return ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"][date.getDay()];
-			} else {
-				return (
-					`${date.getDate() < 10 ? "0" + date.getDate() : date.getDate()} ` +
-					["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"][date.getMonth()] +
-					(seconds < 31536000 ? "" : `, ${date.getFullYear()}`)
-				);
-			}
+			const seconds = Math.floor((new Date() - new Date(dateString)) / 1000);
+			let interval = seconds / 31536000;
+			if (interval > 1) return Math.floor(interval) + "Y";
+			interval = seconds / 2592000;
+			if (interval > 1) return Math.floor(interval) + "M";
+			interval = seconds / 86400;
+			if (interval > 1) return Math.floor(interval) + "d";
+			interval = seconds / 3600;
+			if (interval > 1) return Math.floor(interval) + "h";
+			interval = seconds / 60;
+			if (interval > 1) return Math.floor(interval) + "m";
+			return "now";
 		},
 	},
 }).mount("#app");

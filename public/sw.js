@@ -2,7 +2,7 @@
  * Flash Service worker
  */
 
-const currentCacheName = "flash-v-~1.0.2";
+const currentCacheName = "flash-v-~1.0.3";
 
 self.addEventListener("install", function(e) {
 	console.log("Install event triggered. New updates available.");

@@ -94,7 +94,7 @@
 						<a
 							href="javascript:void(0)"
 							v-bind:class="'source '+(selectedSources.includes(source.sourceType) ? '' : 'disable')"
-							v-bind:style="'color:'+source.color"
+							v-bind:style="'color:'+(source.darkModeColor ?? source.color)"
 							v-on:click="toggleSelectedSources(source.sourceType)"
 						>
 							{{source.sourceLabel}}
