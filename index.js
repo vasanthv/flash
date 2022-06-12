@@ -55,8 +55,15 @@ const fetchHackerNews = async ({ sourceLabel, sourceType }) => {
 		);
 
 		const stories = top20Stories.map((t) => {
-			const { title, url, time, author } = t.data;
-			return { title, url, date: new Date(time * 1000), author, sourceLabel, sourceType };
+			const { id, title, url, time, author } = t.data;
+			return {
+				title,
+				url: url ?? `https://news.ycombinator.com/item?id=${id}`,
+				date: new Date(time * 1000),
+				author,
+				sourceLabel,
+				sourceType,
+			};
 		});
 
 		return stories;
